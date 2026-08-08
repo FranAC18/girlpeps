@@ -11,7 +11,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
   return (
     <footer className="bg-[#F3E5CF] border-t border-[#E9DCC8] py-16 text-[#3B302A]">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
-        
+
         {/* Col 1: Brand & Logo */}
         <div className="space-y-4 md:col-span-1">
           <div className="flex items-center gap-3">
@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
               </span>
             </span>
           </div>
-          
+
           <p className="text-xs text-[#766960] leading-relaxed font-light">
             Catálogo femenino premium orientado a productos de investigación, péptidos y cuidado personal con formulaciones avanzadas y empaque de lujo.
           </p>
@@ -125,12 +125,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
 
       <div className="container mx-auto px-6 mt-12 pt-6 border-t border-[#E9DCC8] text-center text-xs text-[#766960] font-light flex flex-col sm:flex-row items-center justify-between gap-4">
         <span>© {new Date().getFullYear()} Girl Peps. Todos los derechos reservados.</span>
-        
+
         {/* Mandated Attribution Link */}
         <div className="flex items-center gap-1.5 font-medium">
           <span>Desarrollado por</span>
           <a
-            href="https://kobaia.dev"
+            href="https://www.instagram.com/kobaia.dev/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#3B302A] font-bold underline hover:text-[#C6A15B] transition-colors"
