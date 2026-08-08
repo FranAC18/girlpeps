@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FBF3E4;
+    color: #3B302A;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+.card-cream {
+  background: #FFF9F0;
+  border: 1px solid #E9DCC8;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(59, 48, 42, 0.04);
+}
+
+.card-cream-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-cream-hover:hover {
+  border-color: #C6A15B;
+  box-shadow: 0 12px 35px rgba(198, 161, 91, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF3E4;
+}
+::-webkit-scrollbar-thumb {
+  background: #E9DCC8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A15B;
+}
