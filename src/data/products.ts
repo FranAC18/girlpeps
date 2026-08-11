@@ -27,7 +27,7 @@ export const products: Product[] = [
   },
   {
     "id": 3,
-    "title": "LIPO C+B12",
+    "title": "LIPO C+B12 500mg",
     "price": 174.99,
     "status": "in_transit",
     "image": "/images/lipo-c.png",
@@ -63,12 +63,12 @@ export const products: Product[] = [
   },
   {
     "id": 7,
-    "title": "BPC 157 + TB500 20mg",
+    "title": "BPC+GHK+CU+TB 10mg",
     "price": 104.99,
     "status": "in_transit",
     "image": "/images/bpc157-tb500-20mg.png",
     "category": "Blends",
-    "description": "BPC 157 + TB500 20mg combines two well-studied regenerative research peptides for laboratory analysis of tissue migration, cellular repair pathways, and extracellular matrix interactions. Research Use Only (RUO). Not for human consumption.",
+    "description": "BPC+GHK+CU+TB 10mg combines four well-studied regenerative research peptides for laboratory analysis of tissue migration, cellular repair pathways, and extracellular matrix interactions. Research Use Only (RUO). Not for human consumption.",
     "purity": "99%+ HPLC Verified",
     "form": "Lyophilized Powder",
     "researchArea": "Tissue Regeneration & Cellular Repair"
@@ -87,12 +87,12 @@ export const products: Product[] = [
   },
   {
     "id": 8,
-    "title": "5-Amino-1MQ 50mg",
+    "title": "5-Amino-1MQ 10mg",
     "price": 109.99,
     "status": "in_stock",
     "image": "/images/5-amino-1mq-50mg.png",
     "category": "Peptides",
-    "description": "5-Amino-1MQ 50mg is a targeted NNMT inhibitor compound studied in metabolic modulation, cellular energy flux, and adipose signaling pathways. Research Use Only (RUO). Not for human consumption.",
+    "description": "5-Amino-1MQ 10mg is a targeted NNMT inhibitor compound studied in metabolic modulation, cellular energy flux, and adipose signaling pathways. Research Use Only (RUO). Not for human consumption.",
     "purity": "99%+ HPLC Verified",
     "form": "Lyophilized Powder",
     "researchArea": "NNMT Enzymatic Modulation & Metabolism"
@@ -219,12 +219,12 @@ export const products: Product[] = [
   },
   {
     "id": 19,
-    "title": "Tirzepatide 20mg",
+    "title": "Tirzepatide 10mg",
     "price": 174.99,
     "status": "in_stock",
     "image": "/images/tirzepatide-20mg.png",
     "category": "Peptides",
-    "description": "Tirzepatide 20mg is a dual GIP and GLP-1 receptor co-agonist peptide manufactured to high purity standards for metabolic pathway research and receptor binding kinetic models. Research Use Only (RUO). Not for human consumption.",
+    "description": "Tirzepatide 10mg is a dual GIP and GLP-1 receptor co-agonist peptide manufactured to high purity standards for metabolic pathway research and receptor binding kinetic models. Research Use Only (RUO). Not for human consumption.",
     "purity": "99%+ HPLC Verified",
     "form": "Lyophilized Powder",
     "researchArea": "Dual GIP/GLP-1 Co-agonist Signaling"
@@ -255,12 +255,12 @@ export const products: Product[] = [
   },
   {
     "id": 24,
-    "title": "AOD-9604 5mg",
+    "title": "AOD-9604 10mg",
     "price": 109.99,
     "status": "in_stock",
     "image": "/images/aod-9604-5mg.png",
     "category": "Peptides",
-    "description": "AOD-9604 5mg is a C-terminal fragment peptide derived from human growth hormone (hGH 177-191), studied for lipolytic pathway modulation and cartilage matrix interactions. Research Use Only (RUO). Not for human consumption.",
+    "description": "AOD-9604 10mg is a C-terminal fragment peptide derived from human growth hormone (hGH 177-191), studied for lipolytic pathway modulation and cartilage matrix interactions. Research Use Only (RUO). Not for human consumption.",
     "purity": "99%+ HPLC Verified",
     "form": "Lyophilized Powder",
     "researchArea": "Lipolytic Pathway Modulation & Matrix Studies"
@@ -315,26 +315,26 @@ export const products: Product[] = [
   },
   {
     "id": 34,
-    "title": "Insulin",
+    "title": "Insulin 3ML",
     "price": 74.99,
     "status": "in_transit",
     "image": "/images/insulin.png",
     "category": "Peptides",
-    "description": "Insulin is a high-purity research peptide intended for laboratory investigations into glucose transporter dynamics, insulin receptor signaling cascades, and cellular energy metabolism. Research Use Only (RUO). Not for human consumption.",
+    "description": "Insulin 3ML is a high-purity research peptide intended for laboratory investigations into glucose transporter dynamics, insulin receptor signaling cascades, and cellular energy metabolism. Research Use Only (RUO). Not for human consumption.",
     "purity": "99%+ HPLC Verified",
-    "form": "Lyophilized Powder",
+    "form": "Liquid Solution (3ml)",
     "researchArea": "Receptor Signaling & Glucose Transport Dynamics"
   },
   {
     "id": 36,
-    "title": "Lemon Bottle Solution",
+    "title": "Lemon Bottle Solution 10mg",
     "price": 129.99,
     "status": "in_stock",
     "image": "/images/lemon-bottle.png",
     "category": "Research Solutions",
-    "description": "Lemon Bottle Lipolytic Solution is a high-performance research formulation utilizing riboflavin (Vitamin B2), lecithin, and bromelain for targeted adipocyte metabolism and lipid cell degradation kinetics studies. Research Use Only (RUO). Not for human consumption.",
+    "description": "Lemon Bottle Lipolytic Solution 10mg is a high-performance research formulation utilizing riboflavin (Vitamin B2), lecithin, and bromelain for targeted adipocyte metabolism and lipid cell degradation kinetics studies. Research Use Only (RUO). Not for human consumption.",
     "purity": "99%+ HPLC Verified",
-    "form": "Liquid Solution (50ml)",
+    "form": "Liquid Solution",
     "researchArea": "Adipocyte Metabolism & Lipolytic Kinetics"
   }
 ];
