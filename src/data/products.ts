@@ -136,7 +136,7 @@ export const products: Product[] = [
   {
     "id": 12,
     "title": "MOTS-C 40mg",
-    "price": 150.00,
+    "price": 149.99,
     "status": "sold_out",
     "image": "/images/mots-c-40mg.png",
     "category": "Peptides",
@@ -148,7 +148,7 @@ export const products: Product[] = [
   {
     "id": 13,
     "title": "SEMAX 10mg",
-    "price": 120.00,
+    "price": 119.99,
     "status": "in_transit",
     "image": "/images/semax-10mg.png",
     "category": "Peptides",
@@ -160,7 +160,7 @@ export const products: Product[] = [
   {
     "id": 14,
     "title": "Klow 80mg",
-    "price": 180.00,
+    "price": 179.99,
     "status": "in_stock",
     "image": "/images/klow-80mg.png",
     "category": "Peptides",
@@ -196,7 +196,7 @@ export const products: Product[] = [
   {
     "id": 17,
     "title": "Retatrutide 20mg",
-    "price": 275.00,
+    "price": 274.99,
     "status": "sold_out",
     "image": "/images/retatrutide-20mg.png",
     "category": "Peptides",
@@ -244,7 +244,7 @@ export const products: Product[] = [
   {
     "id": 22,
     "title": "KPV 10mg",
-    "price": 110.00,
+    "price": 109.99,
     "status": "in_transit",
     "image": "/images/kpv-10mg.png",
     "category": "Peptides",
@@ -256,7 +256,7 @@ export const products: Product[] = [
   {
     "id": 24,
     "title": "AOD-9604 5mg",
-    "price": 110.00,
+    "price": 109.99,
     "status": "in_stock",
     "image": "/images/aod-9604-5mg.png",
     "category": "Peptides",
@@ -292,7 +292,7 @@ export const products: Product[] = [
   {
     "id": 31,
     "title": "Kisspeptin 10mg",
-    "price": 110.00,
+    "price": 109.99,
     "status": "sold_out",
     "image": "/images/kisspeptin-10mg.png",
     "category": "Peptides",
@@ -304,7 +304,7 @@ export const products: Product[] = [
   {
     "id": 32,
     "title": "PT-141 10mg",
-    "price": 110.00,
+    "price": 109.99,
     "status": "in_transit",
     "image": "/images/pt-141-10mg.png",
     "category": "Peptides",
