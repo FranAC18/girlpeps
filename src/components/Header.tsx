@@ -41,31 +41,31 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-7 text-xs uppercase tracking-[0.2em] font-medium text-[#3B302A]">
           <a href="#" className="hover:text-[#C6A15B] transition-colors border-b-2 border-transparent hover:border-[#C6A15B] py-1">
-            Inicio
+            Home
           </a>
           <a href="#about" className="hover:text-[#C6A15B] transition-colors border-b-2 border-transparent hover:border-[#C6A15B] py-1">
-            Nosotros
+            About Us
           </a>
           <a href="#education" className="hover:text-[#C6A15B] transition-colors border-b-2 border-transparent hover:border-[#C6A15B] py-1">
-            Aprende
+            Science
           </a>
           <a href="#products" className="hover:text-[#C6A15B] transition-colors border-b-2 border-transparent hover:border-[#C6A15B] py-1">
-            Catálogo
+            Catalog
           </a>
           <a href="#how-to-buy" className="hover:text-[#C6A15B] transition-colors border-b-2 border-transparent hover:border-[#C6A15B] py-1">
-            Cómo Comprar
+            How to Buy
           </a>
           <button
             onClick={() => onOpenPolicy('shipping')}
             className="hover:text-[#C6A15B] transition-colors uppercase cursor-pointer py-1"
           >
-            Envíos
+            Shipping
           </button>
           <button
             onClick={onOpenTrack}
             className="hover:text-[#C6A15B] transition-colors uppercase cursor-pointer text-[#C6A15B] font-semibold py-1"
           >
-            Rastreo
+            Track Order
           </button>
         </nav>
 
@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({
             href={siteConfig.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            title="Síguenos en Instagram @girl_peps"
+            title="Follow us on Instagram @girl_peps"
             aria-label="Instagram @girl_peps"
             className="p-2.5 text-[#3B302A] hover:text-[#C6A15B] hover:bg-[#F3E5CF] rounded-full transition-all border border-[#E9DCC8]"
           >
@@ -85,10 +85,10 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* WhatsApp Direct Button */}
           <a
-            href={`https://wa.me/${siteConfig.whatsappRaw}?text=Hola%20Girl%20Peps%2C%20deseo%20hacer%20una%20consulta.`}
+            href={`https://wa.me/${siteConfig.whatsappRaw}?text=Hello%20Girl%20Peps%2C%20I%20have%20an%20inquiry.`}
             target="_blank"
             rel="noopener noreferrer"
-            title="Escribir por WhatsApp"
+            title="Inquire via WhatsApp"
             aria-label="WhatsApp +1 (862) 233-3919"
             className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-[#3B302A] bg-[#F3E5CF] border border-[#E9DCC8] rounded-full hover:bg-[#C6A15B] hover:text-white transition-all shadow-sm"
           >
@@ -99,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Shopping Cart Button */}
           <button
             onClick={onOpenCart}
-            aria-label="Carrito de compras"
+            aria-label="Shopping Cart"
             className="relative p-2.5 rounded-full border border-[#E9DCC8] bg-[#FFF9F0] hover:bg-[#F3E5CF] hover:border-[#C6A15B] transition-all text-[#3B302A] cursor-pointer shadow-sm"
           >
             <ShoppingBag className="h-5 w-5 text-[#3B302A]" />
@@ -129,35 +129,35 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setMobileMenuOpen(false)}
             className="block hover:text-[#C6A15B] py-2"
           >
-            Inicio
+            Home
           </a>
           <a
             href="#about"
             onClick={() => setMobileMenuOpen(false)}
             className="block hover:text-[#C6A15B] py-2"
           >
-            Nosotros
+            About Us
           </a>
           <a
             href="#education"
             onClick={() => setMobileMenuOpen(false)}
             className="block hover:text-[#C6A15B] py-2"
           >
-            ¿Qué son los Péptidos?
+            Peptide Science
           </a>
           <a
             href="#products"
             onClick={() => setMobileMenuOpen(false)}
             className="block hover:text-[#C6A15B] py-2"
           >
-            Catálogo
+            Catalog
           </a>
           <a
             href="#how-to-buy"
             onClick={() => setMobileMenuOpen(false)}
             className="block hover:text-[#C6A15B] py-2"
           >
-            Cómo Comprar
+            How to Buy
           </a>
           <button
             onClick={() => {
@@ -166,7 +166,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             className="block w-full text-left hover:text-[#C6A15B] py-2 uppercase"
           >
-            Envíos
+            Shipping Policy
           </button>
           <button
             onClick={() => {
@@ -175,7 +175,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             className="block w-full text-left text-[#C6A15B] py-2 uppercase font-semibold"
           >
-            Rastreo de Pedido
+            Track Order
           </button>
 
           {/* Social Links Mobile */}
@@ -191,7 +191,7 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
 
             <a
-              href={`https://wa.me/${siteConfig.whatsappRaw}?text=Hola%20Girl%20Peps`}
+              href={`https://wa.me/${siteConfig.whatsappRaw}?text=Hello%20Girl%20Peps`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-3 bg-[#3B302A] text-white rounded-full font-semibold text-xs tracking-wider uppercase"
@@ -205,3 +205,4 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
+

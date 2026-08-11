@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, Truck, RotateCcw, ShieldCheck } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 interface PolicyModalProps {
   type: 'shipping' | 'refund' | null;
@@ -16,7 +17,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 text-[#766960] hover:text-[#3B302A] rounded-full hover:bg-[#F3E5CF] transition-colors"
-          aria-label="Cerrar"
+          aria-label="Close"
         >
           <X className="w-5 h-5" />
         </button>
@@ -28,22 +29,22 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
                 <Truck className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs uppercase tracking-widest text-[#C6A15B] font-semibold">Documento Oficial</span>
-                <h2 className="font-serif text-2xl font-bold uppercase tracking-wide text-[#3B302A]">Política de Envíos</h2>
+                <span className="text-xs uppercase tracking-widest text-[#C6A15B] font-semibold">Official Policy</span>
+                <h2 className="font-serif text-2xl font-bold uppercase tracking-wide text-[#3B302A]">Shipping & Delivery Policy</h2>
               </div>
             </div>
 
             <div className="space-y-4 text-sm text-[#766960] font-light leading-relaxed">
               <p>
-                En <strong>Peptaire Labs</strong>, todos los péptidos y compuestos son empacados utilizando aislamiento térmico de laboratorio para garantizar la máxima estabilidad molecular durante el traslado.
+                At <strong>{siteConfig.brandName}</strong>, all peptides and research compounds are prepared using protective, laboratory-grade insulation to ensure maximum molecular stability during transport.
               </p>
-              <h4 className="font-semibold text-[#3B302A] text-xs uppercase tracking-wider">Tiempos de Procesamiento</h4>
+              <h4 className="font-semibold text-[#3B302A] text-xs uppercase tracking-wider">Processing & Handling Times</h4>
               <p>
-                Los pedidos confirmados antes de las 2:00 PM EST se despachan el mismo día hábil. La información de seguimiento se envía inmediatamente vía WhatsApp (+1 862 233-3919).
+                Orders verified before 2:00 PM EST are dispatched the same business day. Tracking reference numbers are sent immediately via WhatsApp ({siteConfig.whatsappNumber}).
               </p>
-              <h4 className="font-semibold text-[#3B302A] text-xs uppercase tracking-wider">Envíos Nacionales e Internacionales</h4>
+              <h4 className="font-semibold text-[#3B302A] text-xs uppercase tracking-wider">Domestic & International Carrier Transit</h4>
               <p>
-                El tiempo estándar de entrega es de 2 a 4 días hábiles. Opciones de envío exprés prioritario están disponibles al coordinar por WhatsApp.
+                Standard carrier delivery time is 2 to 4 business days. Priority express shipping options are available upon direct request during WhatsApp order confirmation.
               </p>
             </div>
           </>
@@ -54,22 +55,22 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
                 <RotateCcw className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs uppercase tracking-widest text-[#C6A15B] font-semibold">Documento Oficial</span>
-                <h2 className="font-serif text-2xl font-bold uppercase tracking-wide text-[#3B302A]">Política de Reembolsos</h2>
+                <span className="text-xs uppercase tracking-widest text-[#C6A15B] font-semibold">Official Policy</span>
+                <h2 className="font-serif text-2xl font-bold uppercase tracking-wide text-[#3B302A]">Refund & Replacement Policy</h2>
               </div>
             </div>
 
             <div className="space-y-4 text-sm text-[#766960] font-light leading-relaxed">
               <p>
-                Debido a la naturaleza regulada de los compuestos de investigación de laboratorio, no es posible reingresar productos al inventario una vez que salen de nuestras instalaciones con control de temperatura.
+                Due to the stringent regulatory nature of laboratory research compounds, products cannot be returned to inventory once they leave our climate-controlled fulfillment facilities.
               </p>
-              <h4 className="font-semibold text-[#3B302A] text-xs uppercase tracking-wider">Garantía por Daños en Tránsito</h4>
+              <h4 className="font-semibold text-[#3B302A] text-xs uppercase tracking-wider">Transit Damage Guarantee</h4>
               <p>
-                Si tu empaque llega abierto o dañado durante el transporte, reporta el incidente en las primeras 48 horas vía WhatsApp (+1 862 233-3919) adjuntando fotografías. Se emitirá un reemplazo inmediato sin costo adicional.
+                If your package arrives compromised or damaged in transit, please notify our team within 48 hours via WhatsApp ({siteConfig.whatsappNumber}) with accompanying photos. An immediate replacement will be issued at zero additional cost.
               </p>
-              <h4 className="font-semibold text-[#3B302A] text-xs uppercase tracking-wider">Garantía de Pureza</h4>
+              <h4 className="font-semibold text-[#3B302A] text-xs uppercase tracking-wider">Analytical Purity Guarantee</h4>
               <p>
-                Todos los productos cuentan con comprobante HPLC del 99%+ de pureza. Si un ensayo demuestra lo contrario, se otorga reembolso completo o reemplazo.
+                All research compounds are backed by 99%+ HPLC purity verification. If an independent analytical assay demonstrates non-conformity, a full refund or immediate replacement is provided.
               </p>
             </div>
           </>
@@ -78,13 +79,13 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
         <div className="pt-4 border-t border-[#E9DCC8] flex justify-between items-center text-xs">
           <span className="text-[#766960] flex items-center gap-1">
             <ShieldCheck className="w-4 h-4 text-[#C6A15B]" />
-            Peptaire Labs Quality Guarantee
+            {siteConfig.brandName} Quality Assurance
           </span>
           <button
             onClick={onClose}
-            className="px-5 py-2 bg-[#3B302A] text-[#FFF9F0] font-semibold uppercase tracking-wider rounded-full hover:bg-[#C6A15B] transition-colors"
+            className="px-5 py-2 bg-[#3B302A] text-[#FFF9F0] font-semibold uppercase tracking-wider rounded-full hover:bg-[#C6A15B] transition-colors cursor-pointer"
           >
-            Cerrar Documento
+            Close Document
           </button>
         </div>
 
@@ -92,3 +93,4 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
     </div>
   );
 };
+

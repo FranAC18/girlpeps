@@ -42,13 +42,13 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       <div className="text-center mb-12 space-y-3">
         <p className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold flex items-center justify-center gap-2">
           <Sparkles className="w-4 h-4 text-[#C6A15B]" />
-          Nuestra Colección
+          Our Collection
         </p>
         <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-wide text-[#3B302A]">
-          Catálogo de Productos Premium
+          Premium Product Catalog
         </h2>
         <p className="text-sm text-[#766960] max-w-xl mx-auto font-light">
-          Explora nuestra selección completa de péptidos y compuestos formulados con 99%+ de pureza verificada por HPLC.
+          Explore our complete selection of peptides and compounds formulated to 99%+ HPLC verified purity.
         </p>
       </div>
 
@@ -60,7 +60,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#766960]" />
           <input
             type="text"
-            placeholder="Buscar por nombre (ej. BPC 157, Retatrutide)..."
+            placeholder="Search peptide (e.g. BPC 157, Retatrutide)..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2.5 bg-[#FBF3E4] border border-[#E9DCC8] rounded-xl text-sm text-[#3B302A] placeholder:text-[#766960] focus:outline-none focus:border-[#C6A15B] transition-colors"
@@ -79,7 +79,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   : 'bg-[#FFF9F0] text-[#766960] hover:bg-[#F3E5CF] hover:text-[#3B302A] border-[#E9DCC8]'
               }`}
             >
-              {cat === 'All' ? 'Todos' : cat}
+              {cat === 'All' ? 'All Products' : cat}
             </button>
           ))}
         </div>
@@ -93,20 +93,20 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               onChange={(e) => setOnlyInStock(e.target.checked)}
               className="rounded border-[#E9DCC8] bg-[#FBF3E4] text-[#C6A15B] focus:ring-[#C6A15B] h-4 w-4 cursor-pointer"
             />
-            <span>Sólo Disponibles</span>
+            <span>In Stock Only</span>
           </label>
         </div>
       </div>
 
       {/* Product Counter */}
       <div className="mb-6 flex justify-between items-center text-xs text-[#766960] uppercase tracking-widest px-1 font-medium">
-        <span>Mostrando {filteredProducts.length} de {products.length} productos</span>
+        <span>Showing {filteredProducts.length} of {products.length} products</span>
         {searchTerm && (
           <button
             onClick={() => setSearchTerm('')}
             className="text-[#C6A15B] hover:underline cursor-pointer font-bold"
           >
-            Limpiar Búsqueda
+            Clear Search
           </button>
         )}
       </div>
@@ -126,9 +126,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       ) : (
         <div className="text-center py-20 bg-[#FFF9F0] rounded-2xl border border-[#E9DCC8] space-y-4">
           <Filter className="w-12 h-12 text-[#C6A15B] mx-auto" />
-          <h3 className="text-xl font-serif font-bold text-[#3B302A]">No se encontraron productos</h3>
+          <h3 className="text-xl font-serif font-bold text-[#3B302A]">No products found</h3>
           <p className="text-sm text-[#766960]">
-            Prueba ajustando los términos de búsqueda o selecciona otra categoría.
+            Try adjusting your search terms or select another category filter.
           </p>
           <button
             onClick={() => {
@@ -138,10 +138,11 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             }}
             className="px-6 py-2.5 bg-[#3B302A] text-[#FFF9F0] text-xs uppercase font-semibold tracking-wider rounded-full hover:bg-[#C6A15B] transition-colors"
           >
-            Restablecer Filtros
+            Reset Filters
           </button>
         </div>
       )}
     </section>
   );
 };
+

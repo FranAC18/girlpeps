@@ -4,23 +4,23 @@ import { ShieldCheck, MessageCircle, FileText, Lock } from 'lucide-react';
 export const TrustSection: React.FC = () => {
   const trustPoints = [
     {
-      title: "Atención personalizada",
-      desc: "Asesoría directa y confidencial por WhatsApp durante todo tu proceso.",
+      title: "Personalized Support",
+      desc: "Direct and confidential assistance via WhatsApp throughout your ordering process.",
       icon: ShieldCheck,
     },
     {
-      title: "Pedido fácil por WhatsApp",
-      desc: "Generación automática de tu comanda sin registros complejos.",
+      title: "Seamless WhatsApp Ordering",
+      desc: "Instant structured order generation without cumbersome user registration.",
       icon: MessageCircle,
     },
     {
-      title: "Información clara",
-      desc: "Descripciones completas y certificados de pureza 99%+ comprobados.",
+      title: "Transparent Specifications",
+      desc: "Comprehensive product data sheets and independently verified 99%+ HPLC purity.",
       icon: FileText,
     },
     {
-      title: "Pago coordinado directamente",
-      desc: "Múltiples opciones de pago directo de forma segura y transparente.",
+      title: "Direct Secure Payment",
+      desc: "Flexible, secure direct payment channels coordinated with our representatives.",
       icon: Lock,
     },
   ];
@@ -32,10 +32,10 @@ export const TrustSection: React.FC = () => {
           
           <div className="text-center mb-10 space-y-2">
             <span className="text-xs uppercase tracking-[0.25em] text-[#C6A15B] font-semibold">
-              Garantía & Compromiso
+              Guarantee & Commitment
             </span>
             <h2 className="font-serif text-3xl font-bold text-[#3B302A]">
-              Tu experiencia de compra asegurada
+              Your Seamless Ordering Experience
             </h2>
           </div>
 
@@ -65,3 +65,4 @@ export const TrustSection: React.FC = () => {
     </section>
   );
 };
+

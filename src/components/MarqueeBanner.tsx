@@ -2,17 +2,17 @@ import React from 'react';
 
 export const MarqueeBanner: React.FC = () => {
   const marqueeItems = [
-    "COSMÉTICA & BIENESTAR PREMIUM ✦",
-    "ENVÍOS EXPRÉS DIRECTOS ✦",
-    "CALIDAD 99%+ COMPROBADA ✦",
-    "PEDIDOS FÁCILES POR WHATSAPP ✦",
-    "ATENCIÓN PERSONALIZADA ✦",
+    "PREMIUM RESEARCH & COSMETICS ✦",
+    "FAST & GUARANTEED SHIPPING ✦",
+    "HPLC 99%+ VERIFIED PURITY ✦",
+    "DIRECT WHATSAPP ORDERS ✦",
+    "DEDICATED SCIENTIFIC SUPPORT ✦",
   ];
 
   const fullItems = [...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems];
 
   return (
-    <div className="w-full bg-[#F3E5CF] border-b border-[#E9DCC8] overflow-hidden py-2.5">
+    <div className="w-full bg-[#F3E5CF] border-b border-[#E9DCC8] overflow-hidden py-2.5 shadow-sm">
       <div className="flex whitespace-nowrap animate-marquee">
         {fullItems.map((item, index) => (
           <span
@@ -26,3 +26,4 @@ export const MarqueeBanner: React.FC = () => {
     </div>
   );
 };
+

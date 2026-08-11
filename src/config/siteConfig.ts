@@ -16,7 +16,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   brandName: "Girl Peps",
-  tagline: "Catálogo & Cosmética de Investigación Premium",
+  tagline: "Premium Research Catalog & Cosmetics",
   whatsappNumber: "+1 (862) 233-3919",
   whatsappRaw: "18622333919",
   instagramHandle: "@girl_peps",
@@ -24,17 +24,17 @@ export const siteConfig: SiteConfig = {
   coupons: {
     "NOMBREPEPS": {
       code: "NOMBREPEPS",
-      sellerName: "Vendedor A",
+      sellerName: "Representative A",
       discountUSD: 10,
     },
     "NOMBREPEPS2": {
       code: "NOMBREPEPS2",
-      sellerName: "Vendedor B",
+      sellerName: "Representative B",
       discountUSD: 10,
     },
     "NOMBREPEPS3": {
       code: "NOMBREPEPS3",
-      sellerName: "Vendedor C",
+      sellerName: "Representative C",
       discountUSD: 10,
     },
     "GIRLPEPS": {
@@ -44,8 +44,9 @@ export const siteConfig: SiteConfig = {
     },
     "PEPS10": {
       code: "PEPS10",
-      sellerName: "Promoción Especial",
+      sellerName: "Special Promotion",
       discountUSD: 10,
     },
   },
 };
+

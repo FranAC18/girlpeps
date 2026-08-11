@@ -18,7 +18,7 @@ export const AgeGateModal: React.FC = () => {
   };
 
   const handleDecline = () => {
-    alert('Acceso restringido. Debes ser mayor de 21 años y aceptar los términos de uso exclusivo para investigación (RUO).');
+    alert('Restricted access. You must be 21+ and accept Research Use Only (RUO) terms.');
     window.location.href = 'https://google.com';
   };
 
@@ -38,20 +38,20 @@ export const AgeGateModal: React.FC = () => {
 
         <div>
           <span className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold">
-            Verificación de Edad & Conformidad
+            Age Verification & Professional Compliance
           </span>
           <h2 className="font-serif text-3xl font-bold mt-2 uppercase tracking-wide text-[#3B302A]">
-            Bienvenida a {siteConfig.brandName}
+            Welcome to {siteConfig.brandName}
           </h2>
         </div>
 
         <p className="text-sm text-[#766960] leading-relaxed font-light">
-          Por favor confirma que tienes al menos <strong>21 años de edad</strong> y reconoces que todos los productos ofertados en esta plataforma están destinados exclusivamente a <strong>Investigación de Laboratorio y Uso Científico (RUO)</strong>. Not for human consumption.
+          Please confirm that you are at least <strong>21 years of age</strong> and acknowledge that all products cataloged on this platform are intended strictly for <strong>Laboratory Research & Scientific Use Only (RUO)</strong>. Not for human consumption.
         </p>
 
         <div className="p-3.5 bg-[#FBF3E4] border border-[#E9DCC8] rounded-xl text-xs text-[#766960] flex items-center gap-2 text-left">
           <AlertCircle className="w-4 h-4 text-[#C6A15B] shrink-0" />
-          <span>Al ingresar, confirmas tu acuerdo con las pautas de investigación y políticas del sitio.</span>
+          <span>By entering, you confirm agreement with site policies and research compliance terms.</span>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -59,13 +59,13 @@ export const AgeGateModal: React.FC = () => {
             onClick={handleConfirm}
             className="flex-1 py-3.5 bg-[#3B302A] text-[#FFF9F0] font-bold uppercase tracking-[0.15em] text-xs hover:bg-[#C6A15B] transition-all shadow-md rounded-full cursor-pointer"
           >
-            Tengo +21 Años y Acepto
+            I am 21+ & Accept Terms
           </button>
           <button
             onClick={handleDecline}
             className="py-3.5 px-6 border border-[#E9DCC8] text-[#766960] font-semibold uppercase tracking-wider text-xs hover:bg-[#F3E5CF] transition-colors rounded-full cursor-pointer"
           >
-            Salir
+            Exit Site
           </button>
         </div>
 
@@ -73,3 +73,4 @@ export const AgeGateModal: React.FC = () => {
     </div>
   );
 };
+

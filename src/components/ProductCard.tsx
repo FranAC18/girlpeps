@@ -18,7 +18,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const isInTransit = product.status === 'in_transit';
 
   const whatsappInquiryUrl = `https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(
-    `Hola ${siteConfig.brandName}, deseo consultar disponibilidad y fecha de reabastecimiento de: ${product.title} ($${product.price.toFixed(2)})`
+    `Hello ${siteConfig.brandName}, I would like to inquire about availability and restocking date for: ${product.title} ($${product.price.toFixed(2)} USD)`
   )}`;
 
   return (
@@ -40,18 +40,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
           {!isAvailable && !isInTransit && (
             <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-[#D9B6B0] text-[#3B302A] rounded-full shadow-sm">
-              Agotado
+              Out of Stock
             </span>
           )}
           {isInTransit && (
             <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-[#C6A15B] text-white rounded-full shadow-sm flex items-center gap-1">
               <Clock className="w-3 h-3" />
-              Viene en camino
+              In Transit
             </span>
           )}
           {isAvailable && (
             <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-[#F3E5CF] text-[#3B302A] border border-[#C6A15B]/40 rounded-full shadow-sm">
-              Disponible
+              Available
             </span>
           )}
         </div>
@@ -63,7 +63,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             onViewDetail(product);
           }}
           className="absolute bottom-3 right-3 p-2.5 bg-[#FFF9F0]/90 hover:bg-[#C6A15B] hover:text-white rounded-full border border-[#E9DCC8] opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm text-[#3B302A] cursor-pointer shadow-md"
-          title="Vista Rápida"
+          title="Quick View"
         >
           <Info className="w-4 h-4" />
         </button>
@@ -95,7 +95,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               className="inline-flex items-center justify-center gap-2 bg-[#3B302A] text-[#FFF9F0] font-semibold px-4 py-2.5 text-xs uppercase tracking-wider hover:bg-[#C6A15B] transition-all cursor-pointer shadow-sm rounded-full"
             >
               <ShoppingBag className="w-3.5 h-3.5" />
-              <span>Agregar</span>
+              <span>Add to Cart</span>
             </button>
           ) : (
             <a
@@ -109,7 +109,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               }`}
             >
               <MessageSquare className="w-3 h-3 text-[#C6A15B]" />
-              <span>{isInTransit ? 'Consultar / Reservar' : 'Consultar WhatsApp'}</span>
+              <span>{isInTransit ? 'Inquire / Reserve' : 'Inquire via WhatsApp'}</span>
             </a>
           )}
         </div>
@@ -117,3 +117,4 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     </article>
   );
 };
+

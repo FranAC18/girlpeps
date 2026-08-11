@@ -4,23 +4,23 @@ import { BookOpen, Sparkles, ShieldAlert, Dna, Activity, Zap, RefreshCw } from '
 export const PeptideEducation: React.FC = () => {
   const researchAreas = [
     {
-      title: "Señalización Celular",
-      desc: "Estudio de cadenas cortas de aminoácidos y su interacción en vías de comunicación intercelular.",
+      title: "Cellular Signaling",
+      desc: "Investigation into short amino acid chains and their receptor binding kinetics in intercellular pathways.",
       icon: Dna,
     },
     {
-      title: "Metabolismo & Energía",
-      desc: "Investigación sobre la regulación de vías metabólicas y balance energético celular.",
+      title: "Metabolism & Energetics",
+      desc: "Research on metabolic pathway regulation, AMPK activation, and cellular energy flux balance.",
       icon: Activity,
     },
     {
-      title: "Reparación & Regeneración",
-      desc: "Compuestos examinados por su papel en modelos de recuperación y remodelación tisular.",
+      title: "Tissue Regeneration",
+      desc: "Compounds studied for their role in cellular repair models, matrix interactions, and recovery dynamics.",
       icon: RefreshCw,
     },
     {
-      title: "Longevidad & Bienestar",
-      desc: "Áreas de exploración científica enfocadas en mantener la integridad celular y antienvejecimiento.",
+      title: "Longevity & Biochemical Integrity",
+      desc: "Scientific exploration focusing on maintaining mitochondrial function and cellular anti-aging pathways.",
       icon: Zap,
     },
   ];
@@ -34,25 +34,25 @@ export const PeptideEducation: React.FC = () => {
           <div className="space-y-4">
             <span className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-[#C6A15B]" />
-              Sección Educativa
+              Educational Resources
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#3B302A] leading-tight">
-              ¿Qué son los péptidos?
+              What Are Peptides?
             </h2>
             <p className="text-sm text-[#766960] font-light leading-relaxed">
-              Los péptidos son moléculas formadas por cadenas cortas de aminoácidos unidos mediante enlaces peptídicos. 
-              Como componentes fundamentales de las proteínas, participan en diversos procesos biológicos y son objeto 
-              de intensa investigación en bioquímica y medicina regenerativa.
+              Peptides are organic compounds formed by short chains of amino acids linked by peptide bonds. 
+              As fundamental building blocks of cellular biology, they participate in diverse physiological 
+              mechanisms and remain at the forefront of biochemistry and regenerative research.
             </p>
             <p className="text-sm text-[#766960] font-light leading-relaxed">
-              Cada compuesto posee propiedades, mecanismos de acción y áreas de investigación únicas, por lo que 
-              nuestro catálogo presenta fichas informativas objetivas para cada uno.
+              Each compound possesses unique structural properties, binding affinities, and experimental applications. 
+              Our catalog provides objective, verified analytical data for each research compound.
             </p>
           </div>
 
           <div className="bg-[#FFF9F0] p-8 rounded-3xl border border-[#E9DCC8] space-y-6 shadow-sm">
             <h3 className="font-serif text-xl font-bold text-[#3B302A]">
-              Áreas Principales de Investigación Científica
+              Core Scientific Research Domains
             </h3>
             <div className="grid sm:grid-cols-2 gap-4">
               {researchAreas.map((area, idx) => {
@@ -69,20 +69,19 @@ export const PeptideEducation: React.FC = () => {
           </div>
         </div>
 
-        {/* Official Compliance & Disclaimer Box (Sección 5) */}
+        {/* Official Compliance & Disclaimer Box */}
         <div className="bg-[#FFF9F0] p-6 sm:p-8 rounded-2xl border border-[#C6A15B]/40 flex items-start gap-4 shadow-sm">
           <div className="p-3 bg-[#F3E5CF] rounded-xl text-[#C6A15B] shrink-0 border border-[#E9DCC8]">
             <ShieldAlert className="w-6 h-6" />
           </div>
           <div className="space-y-2">
             <h4 className="font-serif text-base font-bold text-[#3B302A]">
-              Aviso Importante sobre Investigación (RUO)
+              Important Compliance & Research Use Disclaimer (RUO)
             </h4>
             <p className="text-xs text-[#766960] leading-relaxed font-light">
-              Los productos presentados en este catálogo están destinados a fines de investigación y/o según las condiciones 
-              aplicables a cada compuesto. La información publicada tiene carácter exclusivamente educativo e informativo y no 
-              constituye consejo médico, diagnóstico ni tratamiento. Los productos de investigación no deben ser utilizados 
-              en seres humanos fuera de los marcos y autorizaciones correspondientes.
+              The compounds cataloged on this website are supplied strictly for laboratory, analytical, and scientific research 
+              purposes (RUO). All information presented is strictly educational and does not constitute medical advice, 
+              diagnosis, or clinical treatment recommendations. Research compounds are not intended for human or animal consumption.
             </p>
           </div>
         </div>
@@ -91,3 +90,4 @@ export const PeptideEducation: React.FC = () => {
     </section>
   );
 };
+

@@ -24,14 +24,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
               <span className="font-serif text-xl tracking-[0.12em] text-[#3B302A] uppercase font-bold">
                 Girl <span className="text-[#C6A15B]">Peps</span>
               </span>
-              <span className="text-[9px] tracking-[0.35em] uppercase text-[#766960] mt-0.5">
+              <span className="text-[9px] tracking-[0.35em] uppercase text-[#766960] mt-0.5 font-medium">
                 Beauty & Science
               </span>
             </span>
           </div>
 
           <p className="text-xs text-[#766960] leading-relaxed font-light">
-            Catálogo femenino premium orientado a productos de investigación, péptidos y cuidado personal con formulaciones avanzadas y empaque de lujo.
+            Premium luxury catalog dedicated to high-purity research compounds, peptides, and advanced scientific solutions.
           </p>
 
           {/* Social Network Action Buttons */}
@@ -40,7 +40,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
               href={siteConfig.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              title="Síguenos en Instagram @girl_peps"
+              title="Follow us on Instagram @girl_peps"
               aria-label="Instagram @girl_peps"
               className="p-2.5 bg-[#FFF9F0] border border-[#E9DCC8] rounded-full text-[#3B302A] hover:text-[#C6A15B] hover:border-[#C6A15B] transition-colors shadow-sm"
             >
@@ -48,10 +48,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
             </a>
 
             <a
-              href={`https://wa.me/${siteConfig.whatsappRaw}?text=Hola%20Girl%20Peps`}
+              href={`https://wa.me/${siteConfig.whatsappRaw}?text=Hello%20Girl%20Peps`}
               target="_blank"
               rel="noopener noreferrer"
-              title="Contactar por WhatsApp +1 (862) 233-3919"
+              title="Contact via WhatsApp +1 (862) 233-3919"
               aria-label="WhatsApp +1 (862) 233-3919"
               className="p-2.5 bg-[#FFF9F0] border border-[#E9DCC8] rounded-full text-[#3B302A] hover:text-[#C6A15B] hover:border-[#C6A15B] transition-colors shadow-sm"
             >
@@ -63,17 +63,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
         {/* Col 2: Navigation */}
         <div className="space-y-3">
           <h4 className="text-xs uppercase tracking-[0.2em] font-semibold text-[#C6A15B]">
-            Navegación
+            Navigation
           </h4>
           <ul className="space-y-2 text-xs text-[#766960] font-medium">
-            <li><a href="#" className="hover:text-[#3B302A] transition-colors">Inicio</a></li>
-            <li><a href="#about" className="hover:text-[#3B302A] transition-colors">Nosotros</a></li>
-            <li><a href="#education" className="hover:text-[#3B302A] transition-colors">¿Qué son los Péptidos?</a></li>
-            <li><a href="#products" className="hover:text-[#3B302A] transition-colors">Catálogo</a></li>
-            <li><a href="#how-to-buy" className="hover:text-[#3B302A] transition-colors">Cómo Comprar</a></li>
+            <li><a href="#" className="hover:text-[#3B302A] transition-colors">Home</a></li>
+            <li><a href="#about" className="hover:text-[#3B302A] transition-colors">About Us</a></li>
+            <li><a href="#education" className="hover:text-[#3B302A] transition-colors">Peptide Science</a></li>
+            <li><a href="#products" className="hover:text-[#3B302A] transition-colors">Product Catalog</a></li>
+            <li><a href="#how-to-buy" className="hover:text-[#3B302A] transition-colors">How to Buy</a></li>
             <li>
-              <button onClick={onOpenTrack} className="hover:text-[#3B302A] transition-colors uppercase">
-                Rastreo de Pedido
+              <button onClick={onOpenTrack} className="hover:text-[#3B302A] transition-colors uppercase cursor-pointer">
+                Track Order
               </button>
             </li>
           </ul>
@@ -82,17 +82,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
         {/* Col 3: Legal & Support */}
         <div className="space-y-3">
           <h4 className="text-xs uppercase tracking-[0.2em] font-semibold text-[#C6A15B]">
-            Políticas & Redes
+            Policies & Socials
           </h4>
           <ul className="space-y-2 text-xs text-[#766960] font-medium">
             <li>
-              <button onClick={() => onOpenPolicy('shipping')} className="hover:text-[#3B302A] transition-colors uppercase">
-                Política de Envíos
+              <button onClick={() => onOpenPolicy('shipping')} className="hover:text-[#3B302A] transition-colors uppercase cursor-pointer">
+                Shipping Policy
               </button>
             </li>
             <li>
-              <button onClick={() => onOpenPolicy('refund')} className="hover:text-[#3B302A] transition-colors uppercase">
-                Política de Reembolsos
+              <button onClick={() => onOpenPolicy('refund')} className="hover:text-[#3B302A] transition-colors uppercase cursor-pointer">
+                Refund Policy
               </button>
             </li>
             <li>
@@ -114,21 +114,21 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
         <div className="space-y-3 bg-[#FFF9F0] p-5 rounded-2xl border border-[#E9DCC8] text-xs text-[#766960] shadow-sm">
           <div className="flex items-center gap-1.5 font-semibold text-[#C6A15B] text-xs uppercase tracking-wider">
             <ShieldAlert className="w-4 h-4" />
-            <span>Aviso Legal de Laboratorio</span>
+            <span>Laboratory Legal Notice</span>
           </div>
           <p className="text-[11px] leading-relaxed font-light">
-            Todos los compuestos ofertados están destinados strictly a <strong>Uso en Investigación Científica (RUO)</strong>. Not for human consumption.
+            All products cataloged are supplied strictly for <strong>Scientific Research Use Only (RUO)</strong>. Not for human consumption.
           </p>
         </div>
 
       </div>
 
       <div className="container mx-auto px-6 mt-12 pt-6 border-t border-[#E9DCC8] text-center text-xs text-[#766960] font-light flex flex-col sm:flex-row items-center justify-between gap-4">
-        <span>© {new Date().getFullYear()} Girl Peps. Todos los derechos reservados.</span>
+        <span>© {new Date().getFullYear()} Girl Peps. All rights reserved.</span>
 
         {/* Mandated Attribution Link */}
         <div className="flex items-center gap-1.5 font-medium">
-          <span>Desarrollado por</span>
+          <span>Developed by</span>
           <a
             href="https://www.instagram.com/kobaia.dev/"
             target="_blank"
@@ -142,3 +142,4 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
     </footer>
   );
 };
+

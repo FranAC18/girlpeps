@@ -41,7 +41,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   const isInTransit = product.status === 'in_transit';
 
   const whatsappInquiryUrl = `https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(
-    `Hola ${siteConfig.brandName}, deseo consultar disponibilidad sobre: ${product.title} ($${product.price.toFixed(2)})`
+    `Hello ${siteConfig.brandName}, I would like to inquire about availability for: ${product.title} ($${product.price.toFixed(2)} USD)`
   )}`;
 
   return (
@@ -60,13 +60,13 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             className="flex items-center gap-1.5 px-3 py-1.5 bg-[#F3E5CF] text-[#3B302A] rounded-full text-xs font-semibold hover:bg-[#E9DCC8] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Volver</span>
+            <span>Back</span>
           </button>
           
           <button
             onClick={onClose}
             className="p-1.5 text-[#766960] hover:text-[#3B302A] bg-[#FBF3E4] rounded-full border border-[#E9DCC8]"
-            aria-label="Cerrar"
+            aria-label="Close"
           >
             <X className="w-5 h-5" />
           </button>
@@ -76,8 +76,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         <button
           onClick={onClose}
           className="hidden sm:flex absolute top-4 right-4 p-2.5 text-[#766960] hover:text-[#3B302A] bg-[#FBF3E4] hover:bg-[#F3E5CF] border border-[#E9DCC8] rounded-full transition-all shadow-sm items-center gap-1 cursor-pointer"
-          aria-label="Cerrar"
-          title="Cerrar vista detallada"
+          aria-label="Close"
+          title="Close detailed view"
         >
           <X className="w-5 h-5" />
         </button>
@@ -93,18 +93,18 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             <div className="absolute top-3 left-3">
               {isAvailable && (
                 <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-[#F3E5CF] text-[#3B302A] border border-[#C6A15B]/40 rounded-full shadow-sm">
-                  Disponible
+                  Available
                 </span>
               )}
               {isInTransit && (
                 <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-[#C6A15B] text-white rounded-full shadow-sm flex items-center gap-1">
                   <Clock className="w-3.5 h-3.5" />
-                  Viene en camino
+                  In Transit
                 </span>
               )}
               {!isAvailable && !isInTransit && (
                 <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-[#D9B6B0] text-[#3B302A] rounded-full shadow-sm">
-                  Agotado
+                  Out of Stock
                 </span>
               )}
             </div>
@@ -127,17 +127,17 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             {/* Spec grid */}
             <div className="grid grid-cols-2 gap-3 text-xs bg-[#FBF3E4] p-3.5 sm:p-4 rounded-xl border border-[#E9DCC8]">
               <div>
-                <span className="text-[#766960] block uppercase text-[10px]">Pureza Estándar</span>
+                <span className="text-[#766960] block uppercase text-[10px]">Standard Purity</span>
                 <span className="font-semibold text-[#3B302A] flex items-center gap-1 mt-0.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#C6A15B]" />
                   {product.purity || '99%+ HPLC'}
                 </span>
               </div>
               <div>
-                <span className="text-[#766960] block uppercase text-[10px]">Presentación</span>
+                <span className="text-[#766960] block uppercase text-[10px]">Form / Presentation</span>
                 <span className="font-semibold text-[#3B302A] flex items-center gap-1 mt-0.5">
                   <FlaskConical className="w-3.5 h-3.5 text-[#C6A15B]" />
-                  {product.form || 'Polvo Liofilizado'}
+                  {product.form || 'Lyophilized Powder'}
                 </span>
               </div>
             </div>
@@ -145,7 +145,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             {/* Description */}
             <div>
               <h4 className="text-xs uppercase tracking-wider text-[#766960] font-semibold mb-2">
-                Especificación del Compuesto
+                Compound Specification
               </h4>
               <p className="text-xs sm:text-sm text-[#3B302A]/90 leading-relaxed font-light">
                 {product.description}
@@ -154,7 +154,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
             {/* Disclaimer */}
             <div className="p-3.5 bg-[#F3E5CF]/60 border border-[#E9DCC8] rounded-xl text-[11px] text-[#766960] leading-normal font-light">
-              🔬 <strong>Uso Exclusivo en Investigación (RUO):</strong> Suministrado estrictamente para ensayos de laboratorio e investigación científica. Not for human consumption.
+              🔬 <strong>Research Use Only (RUO):</strong> Supplied strictly for laboratory assays and scientific research. Not for human consumption.
             </div>
 
             {/* Actions & Exit Button */}
@@ -168,7 +168,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   className="w-full py-3.5 sm:py-4 bg-[#3B302A] text-[#FFF9F0] font-semibold uppercase tracking-[0.15em] text-xs hover:bg-[#C6A15B] transition-all flex items-center justify-center gap-2 shadow-md rounded-full cursor-pointer"
                 >
                   <ShoppingBag className="w-4 h-4" />
-                  Agregar al Carrito (${product.price.toFixed(2)})
+                  Add to Cart (${product.price.toFixed(2)} USD)
                 </button>
               ) : (
                 <a
@@ -178,17 +178,17 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   className="w-full py-3.5 sm:py-4 bg-[#C6A15B] text-white font-semibold uppercase tracking-[0.15em] text-xs hover:bg-[#D9BE82] transition-all flex items-center justify-center gap-2 shadow-md rounded-full text-center"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  {isInTransit ? 'Consultar / Reservar en WhatsApp' : 'Consultar Disponibilidad'}
+                  {isInTransit ? 'Inquire / Reserve via WhatsApp' : 'Inquire Availability via WhatsApp'}
                 </a>
               )}
 
-              {/* Explicit Salir / Cerrar Button */}
+              {/* Explicit Exit / Close Button */}
               <button
                 onClick={onClose}
                 className="w-full py-3 sm:py-3.5 bg-[#F3E5CF] text-[#3B302A] border border-[#C6A15B]/40 hover:bg-[#E9DCC8] font-semibold uppercase tracking-wider text-xs transition-all flex items-center justify-center gap-2 rounded-full cursor-pointer shadow-sm"
               >
                 <X className="w-4 h-4 text-[#766960]" />
-                <span>Salir / Cerrar</span>
+                <span>Exit / Close Product View</span>
               </button>
             </div>
 
@@ -198,3 +198,4 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     </div>
   );
 };
+

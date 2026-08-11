@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Search, PackageCheck, Truck, CheckCircle2, MessageSquare } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 interface TrackOrderModalProps {
   isOpen: boolean;
@@ -26,7 +27,7 @@ export const TrackOrderModal: React.FC<TrackOrderModalProps> = ({ isOpen, onClos
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 text-[#766960] hover:text-[#3B302A] rounded-full hover:bg-[#F3E5CF] transition-colors"
-          aria-label="Cerrar"
+          aria-label="Close"
         >
           <X className="w-5 h-5" />
         </button>
@@ -34,10 +35,10 @@ export const TrackOrderModal: React.FC<TrackOrderModalProps> = ({ isOpen, onClos
         <div className="text-center space-y-2 mb-6">
           <Truck className="w-10 h-10 text-[#C6A15B] mx-auto" />
           <h2 className="font-serif text-2xl font-bold uppercase tracking-wider text-[#3B302A]">
-            Rastrear Pedido
+            Track Your Order
           </h2>
           <p className="text-xs text-[#766960] font-light">
-            Ingresa tu código de pedido o número de guía a continuación.
+            Enter your order reference code or tracking number below.
           </p>
         </div>
 
@@ -46,7 +47,7 @@ export const TrackOrderModal: React.FC<TrackOrderModalProps> = ({ isOpen, onClos
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#766960]" />
             <input
               type="text"
-              placeholder="Ej. PEP-884920 o número de guía"
+              placeholder="e.g. PEP-884920 or tracking number"
               value={trackingNumber}
               onChange={(e) => {
                 setTrackingNumber(e.target.value);
@@ -61,7 +62,7 @@ export const TrackOrderModal: React.FC<TrackOrderModalProps> = ({ isOpen, onClos
             type="submit"
             className="w-full py-3.5 bg-[#3B302A] text-[#FFF9F0] font-bold uppercase tracking-widest text-xs rounded-full hover:bg-[#C6A15B] transition-all shadow-md cursor-pointer"
           >
-            Consultar Estado
+            Check Status
           </button>
         </form>
 
@@ -69,9 +70,9 @@ export const TrackOrderModal: React.FC<TrackOrderModalProps> = ({ isOpen, onClos
           <div className="mt-6 pt-6 border-t border-[#E9DCC8] space-y-4 animate-fadeIn">
             <div className="bg-[#FBF3E4] p-4 rounded-2xl border border-[#E9DCC8] space-y-3">
               <div className="flex justify-between items-center text-xs">
-                <span className="font-semibold text-[#C6A15B]">ID Pedido: {trackingNumber.toUpperCase()}</span>
+                <span className="font-semibold text-[#C6A15B]">Order ID: {trackingNumber.toUpperCase()}</span>
                 <span className="px-2.5 py-0.5 bg-[#F3E5CF] text-[#3B302A] border border-[#C6A15B]/40 rounded-full text-[10px] uppercase font-bold">
-                  En Camino
+                  In Transit
                 </span>
               </div>
 
@@ -79,33 +80,33 @@ export const TrackOrderModal: React.FC<TrackOrderModalProps> = ({ isOpen, onClos
               <div className="space-y-2.5 pt-2">
                 <div className="flex items-center gap-3 text-xs text-[#3B302A]">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Pedido recibido y confirmado</span>
+                  <span>Order received & confirmed</span>
                 </div>
                 <div className="flex items-center gap-3 text-xs text-[#3B302A]">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Inspección de calidad HPLC & empaque térmico</span>
+                  <span>HPLC Quality inspection & protective packaging</span>
                 </div>
                 <div className="flex items-center gap-3 text-xs text-[#C6A15B] font-semibold">
                   <Truck className="w-4 h-4 text-[#C6A15B] shrink-0 animate-pulse" />
-                  <span>Despachado con paquetería exprés</span>
+                  <span>Dispatched via express carrier</span>
                 </div>
                 <div className="flex items-center gap-3 text-xs text-[#766960]">
                   <PackageCheck className="w-4 h-4 text-[#766960] shrink-0" />
-                  <span>Entrega estimada: 2-4 días hábiles</span>
+                  <span>Estimated delivery: 2-4 business days</span>
                 </div>
               </div>
             </div>
 
             <a
-              href={`https://wa.me/18622333919?text=${encodeURIComponent(
-                `Hola Peptaire Labs, deseo consultar el estado de mi pedido ID: ${trackingNumber}`
+              href={`https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(
+                `Hello ${siteConfig.brandName}, I would like to inquire about the status of my order ID: ${trackingNumber}`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-3 bg-[#F3E5CF] border border-[#C6A15B]/40 text-[#3B302A] font-semibold text-xs uppercase tracking-wider rounded-full hover:bg-[#C6A15B] hover:text-white transition-all"
             >
               <MessageSquare className="w-4 h-4 text-[#C6A15B]" />
-              Consultar por WhatsApp (+1 862 233-3919)
+              Inquire via WhatsApp ({siteConfig.whatsappNumber})
             </a>
           </div>
         )}
@@ -114,3 +115,4 @@ export const TrackOrderModal: React.FC<TrackOrderModalProps> = ({ isOpen, onClos
     </div>
   );
 };
+

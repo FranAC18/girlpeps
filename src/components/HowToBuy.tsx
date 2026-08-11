@@ -1,30 +1,31 @@
 import React from 'react';
 import { ShoppingBag, MessageSquare, CreditCard, Sparkles } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 export const HowToBuy: React.FC = () => {
   const steps = [
     {
       number: "01",
-      title: "Elige tus productos",
-      desc: "Explora el catálogo y selecciona los compuestos o kits requeridos.",
+      title: "Select Your Products",
+      desc: "Explore our research catalog and select your required compounds.",
       icon: Sparkles,
     },
     {
       number: "02",
-      title: "Agrega al carrito",
-      desc: "Revisa las cantidades e ingresa tu cupón de descuento si lo tienes.",
+      title: "Review Cart & Coupon",
+      desc: "Verify quantities and apply your discount coupon code if available.",
       icon: ShoppingBag,
     },
     {
       number: "03",
-      title: "Envía tu pedido por WhatsApp",
-      desc: "Presiona el botón de compra para generar tu comanda formal al +1 (862) 233-3919.",
+      title: "Send WhatsApp Order",
+      desc: `Click checkout to generate your structured order summary to ${siteConfig.whatsappNumber}.`,
       icon: MessageSquare,
     },
     {
       number: "04",
-      title: "Coordina el pago",
-      desc: "Confirma los datos de entrega y realiza el pago directamente con nuestro asesor.",
+      title: "Coordinate Payment & Shipping",
+      desc: "Confirm delivery details and payment preferences directly with our team.",
       icon: CreditCard,
     },
   ];
@@ -36,13 +37,13 @@ export const HowToBuy: React.FC = () => {
         {/* Title */}
         <div className="text-center mb-16 space-y-3">
           <p className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold">
-            Proceso Simple & Seguro
+            Simple & Secure Process
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl text-[#3B302A] font-bold">
-            ¿Cómo realizar tu pedido?
+            How to Place Your Order
           </h2>
           <p className="text-sm text-[#766960] max-w-lg mx-auto font-light">
-            Realizar tu compra en Peptaire Labs es rápido, discreto y personalizado.
+            Ordering at Girl Peps is fast, discreet, and personalized via direct communication.
           </p>
         </div>
 
@@ -79,3 +80,4 @@ export const HowToBuy: React.FC = () => {
     </section>
   );
 };
+

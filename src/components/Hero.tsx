@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
         {/* Subtle Feminine Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#E9DCC8] bg-[#FFF9F0] text-[#C6A15B] text-xs uppercase tracking-[0.25em] font-medium mb-8 shadow-sm">
           <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
-          <span>Catálogo de Péptidos & Compuestos de Investigación</span>
+          <span>Research Peptides & Compound Catalog</span>
         </div>
 
         {/* Title */}
@@ -30,18 +30,18 @@ export const Hero: React.FC = () => {
         </h1>
 
         {/* Tagline */}
-        <div className="mt-6 flex items-center gap-4 text-xs sm:text-sm uppercase tracking-[0.4em] text-[#766960] font-medium">
-          <span>Elegancia</span>
-          <span className="h-px w-6 bg-[#C6A15B]/50"></span>
-          <span>Información Clara</span>
-          <span className="h-px w-6 bg-[#C6A15B]/50"></span>
-          <span>Atención Directa</span>
+        <div className="mt-6 flex items-center gap-3 sm:gap-4 text-xs sm:text-sm uppercase tracking-[0.35em] text-[#766960] font-medium flex-wrap justify-center">
+          <span>Elegance</span>
+          <span className="h-px w-5 bg-[#C6A15B]/50"></span>
+          <span>Verified Purity</span>
+          <span className="h-px w-5 bg-[#C6A15B]/50"></span>
+          <span>Direct Service</span>
         </div>
 
         {/* Description */}
         <p className="mt-8 max-w-2xl text-[#766960] text-base sm:text-lg leading-relaxed font-light">
-          Productos y compuestos de investigación seleccionados para quienes buscan información transparente, 
-          calidad verificada y una experiencia de compra sencilla directamente por WhatsApp.
+          Premium research compounds curated for scientists and researchers seeking transparent analytical data, 
+          verified purity, and a seamless direct order experience via WhatsApp.
         </p>
 
         {/* CTA Buttons */}
@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
             href="#products"
             className="inline-flex items-center justify-center gap-3 bg-[#3B302A] text-[#FFF9F0] font-medium px-9 py-4 uppercase tracking-[0.2em] text-xs transition-all duration-300 hover:bg-[#C6A15B] hover:shadow-lg rounded-full cursor-pointer shadow-sm"
           >
-            Ver Catálogo
+            Explore Catalog
             <ArrowRight className="h-4 w-4 text-[#FFF9F0]" />
           </a>
 
@@ -59,16 +59,17 @@ export const Hero: React.FC = () => {
             className="inline-flex items-center justify-center gap-2 border border-[#E9DCC8] bg-[#FFF9F0] text-[#3B302A] font-medium px-8 py-4 uppercase tracking-[0.2em] text-xs transition-all hover:bg-[#F3E5CF] hover:border-[#C6A15B] rounded-full cursor-pointer"
           >
             <Heart className="w-4 h-4 text-[#D9B6B0]" />
-            ¿Qué son los Péptidos?
+            Peptide Science Guide
           </a>
         </div>
 
         {/* RUO Disclaimer Badge */}
         <div className="mt-12 text-[11px] uppercase tracking-widest text-[#766960] bg-[#FFF9F0] px-5 py-2.5 rounded-full border border-[#E9DCC8] shadow-sm">
-          ✨ Catálogo Informativo & Pedidos Directos vía WhatsApp ({siteConfig.whatsappNumber})
+          ✨ Informational Catalog & Direct Orders via WhatsApp ({siteConfig.whatsappNumber})
         </div>
 
       </div>
     </section>
   );
 };
+

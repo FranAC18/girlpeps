@@ -46,7 +46,7 @@ export function App() {
       if (siteConfig.coupons[cleanCode]) {
         const coupon = siteConfig.coupons[cleanCode];
         setAppliedCoupon(coupon);
-        showToast(`🎟️ ¡Cupón ${coupon.code} de ${coupon.sellerName} activado por enlace! (-$${coupon.discountUSD} USD)`);
+        showToast(`🎟️ Coupon ${coupon.code} from ${coupon.sellerName} activated! (-$${coupon.discountUSD} USD)`);
       }
     }
   }, []);
@@ -66,7 +66,7 @@ export function App() {
       return [...prev, { product, quantity: 1 }];
     });
 
-    showToast(`¡Agregado ${product.title} al carrito!`);
+    showToast(`Added ${product.title} to cart!`);
   };
 
   const handleUpdateQuantity = (productId: number, delta: number) => {
@@ -137,11 +137,11 @@ export function App() {
         appliedCoupon={appliedCoupon}
         onApplyCoupon={(c) => {
           setAppliedCoupon(c);
-          showToast(`🎟️ Cupón ${c.code} aplicado (-$${c.discountUSD} USD)`);
+          showToast(`🎟️ Coupon ${c.code} applied (-$${c.discountUSD} USD)`);
         }}
         onRemoveCoupon={() => {
           setAppliedCoupon(null);
-          showToast(`Cupón removido`);
+          showToast(`Coupon removed`);
         }}
       />
 

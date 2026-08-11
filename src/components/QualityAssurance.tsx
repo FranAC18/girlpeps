@@ -6,11 +6,11 @@ export const QualityAssurance: React.FC = () => {
     <section id="about" className="container mx-auto px-6 py-20 border-t border-[#E9DCC8]">
       <div className="text-center mb-16 space-y-3">
         <p className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold">
-          Calidad en la que puedes confiar
+          Quality You Can Trust
         </p>
         <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-wide text-[#3B302A]">
-          Respaldando la ciencia con compuestos<br />
-          verificados y consistentes.
+          Empowering science with verified,<br />
+          high-consistency research compounds.
         </h2>
       </div>
 
@@ -21,10 +21,10 @@ export const QualityAssurance: React.FC = () => {
             <ShieldCheck className="h-7 w-7" />
           </div>
           <h3 className="font-serif text-2xl text-[#3B302A] font-bold">
-            Garantía de Calidad Premium
+            Premium Quality Assurance
           </h3>
           <p className="text-xs text-[#766960] leading-relaxed font-light">
-            Cada compuesto es supervisado bajo estrictos controles de conservación para asegurar estabilidad molecular y reproducibilidad.
+            Every compound is managed under strict climate control protocols to ensure maximum molecular stability and experimental reproducibility.
           </p>
         </div>
 
@@ -34,10 +34,10 @@ export const QualityAssurance: React.FC = () => {
             <FlaskConical className="h-7 w-7" />
           </div>
           <h3 className="font-serif text-2xl text-[#3B302A] font-bold">
-            Estándar de Investigación
+            Strict Analytical Standard
           </h3>
           <p className="text-xs text-[#766960] leading-relaxed font-light">
-            Formulaciones y péptidos verificados mediante ensayos de pureza HPLC 99%+, destinados a pruebas y análisis de laboratorio.
+            Formulations and peptides independently verified via 99%+ HPLC purity assays, prepared strictly for scientific and laboratory applications.
           </p>
         </div>
 
@@ -47,13 +47,14 @@ export const QualityAssurance: React.FC = () => {
             <Truck className="h-7 w-7" />
           </div>
           <h3 className="font-serif text-2xl text-[#3B302A] font-bold">
-            Despacho Directo & Confiable
+            Fast & Discreet Dispatch
           </h3>
           <p className="text-xs text-[#766960] leading-relaxed font-light">
-            Desde la atención directa en WhatsApp hasta el empaque térmico final, cada detalle se maneja con cuidado y rapidez.
+            From seamless WhatsApp order coordination to protective temperature-controlled packaging, every detail is handled with precision and speed.
           </p>
         </div>
       </div>
     </section>
   );
 };
+
