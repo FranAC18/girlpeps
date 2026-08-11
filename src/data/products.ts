@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     "id": 1,
     "title": "GHK-Cu 50mg",
-    "price": 129.99,
+    "price": 149.99,
     "status": "in_stock",
     "image": "/images/ghk-cu-50mg.png",
     "category": "Peptides",
@@ -16,7 +16,7 @@ export const products: Product[] = [
   {
     "id": 2,
     "title": "Bacteriostatic Water 30ML",
-    "price": 59.99,
+    "price": 74.99,
     "status": "in_stock",
     "image": "/images/bacteriostatic-water-30ml.png",
     "category": "Research Solutions",
@@ -28,7 +28,7 @@ export const products: Product[] = [
   {
     "id": 3,
     "title": "LIPO C+B12",
-    "price": 180,
+    "price": 174.99,
     "status": "in_transit",
     "image": "/images/lipo-c.png",
     "category": "Research Solutions",
@@ -40,7 +40,7 @@ export const products: Product[] = [
   {
     "id": 4,
     "title": "Ipamorelin 10mg",
-    "price": 119.99,
+    "price": 109.99,
     "status": "in_transit",
     "image": "/images/ipamorelin-10mg.png",
     "category": "Peptides",
@@ -64,7 +64,7 @@ export const products: Product[] = [
   {
     "id": 7,
     "title": "BPC 157 + TB500 20mg",
-    "price": 150,
+    "price": 104.99,
     "status": "in_transit",
     "image": "/images/bpc157-tb500-20mg.png",
     "category": "Blends",
@@ -74,9 +74,21 @@ export const products: Product[] = [
     "researchArea": "Tissue Regeneration & Cellular Repair"
   },
   {
+    "id": 35,
+    "title": "CU35 + TB10 + BPC5 50mg",
+    "price": 129.99,
+    "status": "in_transit",
+    "image": "/images/bpc157-tb500-20mg.png",
+    "category": "Blends",
+    "description": "CU35 + TB10 + BPC5 50mg (GLOW Ultra Blend) is a high-concentration triple research peptide formulation created for multi-target extracellular matrix remodeling and cellular kinetics analysis. Research Use Only (RUO). Not for human consumption.",
+    "purity": "99%+ HPLC Verified",
+    "form": "Lyophilized Powder",
+    "researchArea": "Advanced Regenerative & Matrix Remodeling Kinetics"
+  },
+  {
     "id": 8,
     "title": "5-Amino-1MQ 50mg",
-    "price": 119.99,
+    "price": 109.99,
     "status": "in_stock",
     "image": "/images/5-amino-1mq-50mg.png",
     "category": "Peptides",
@@ -100,7 +112,7 @@ export const products: Product[] = [
   {
     "id": 10,
     "title": "Cagrilintide 10mg",
-    "price": 119.99,
+    "price": 109.99,
     "status": "in_transit",
     "image": "/images/cagrilintide-10mg.png",
     "category": "Peptides",
@@ -112,7 +124,7 @@ export const products: Product[] = [
   {
     "id": 11,
     "title": "MOTS-C 10mg",
-    "price": 110.00,
+    "price": 109.99,
     "status": "in_stock",
     "image": "/images/mots-c-10mg.png",
     "category": "Peptides",
@@ -124,7 +136,7 @@ export const products: Product[] = [
   {
     "id": 12,
     "title": "MOTS-C 40mg",
-    "price": 150,
+    "price": 150.00,
     "status": "sold_out",
     "image": "/images/mots-c-40mg.png",
     "category": "Peptides",
@@ -136,7 +148,7 @@ export const products: Product[] = [
   {
     "id": 13,
     "title": "SEMAX 10mg",
-    "price": 120,
+    "price": 120.00,
     "status": "in_transit",
     "image": "/images/semax-10mg.png",
     "category": "Peptides",
@@ -148,7 +160,7 @@ export const products: Product[] = [
   {
     "id": 14,
     "title": "Klow 80mg",
-    "price": 180,
+    "price": 180.00,
     "status": "in_stock",
     "image": "/images/klow-80mg.png",
     "category": "Peptides",
@@ -160,7 +172,7 @@ export const products: Product[] = [
   {
     "id": 15,
     "title": "NAD+ 500mg",
-    "price": 180,
+    "price": 199.99,
     "status": "in_transit",
     "image": "/images/nad-plus-500mg.png",
     "category": "Peptides",
@@ -196,7 +208,7 @@ export const products: Product[] = [
   {
     "id": 18,
     "title": "Tesamorelin 10mg",
-    "price": 110,
+    "price": 109.99,
     "status": "in_stock",
     "image": "/images/tesamorelin-10mg.png",
     "category": "Peptides",
@@ -208,7 +220,7 @@ export const products: Product[] = [
   {
     "id": 19,
     "title": "Tirzepatide 20mg",
-    "price": 180,
+    "price": 174.99,
     "status": "in_stock",
     "image": "/images/tirzepatide-20mg.png",
     "category": "Peptides",
@@ -232,7 +244,7 @@ export const products: Product[] = [
   {
     "id": 22,
     "title": "KPV 10mg",
-    "price": 110,
+    "price": 110.00,
     "status": "in_transit",
     "image": "/images/kpv-10mg.png",
     "category": "Peptides",
@@ -244,7 +256,7 @@ export const products: Product[] = [
   {
     "id": 24,
     "title": "AOD-9604 5mg",
-    "price": 110,
+    "price": 110.00,
     "status": "in_stock",
     "image": "/images/aod-9604-5mg.png",
     "category": "Peptides",
@@ -256,7 +268,7 @@ export const products: Product[] = [
   {
     "id": 25,
     "title": "Selank 10mg",
-    "price": 129.99,
+    "price": 109.99,
     "status": "in_transit",
     "image": "/images/selank-10mg.png",
     "category": "Peptides",
@@ -280,7 +292,7 @@ export const products: Product[] = [
   {
     "id": 31,
     "title": "Kisspeptin 10mg",
-    "price": 110,
+    "price": 110.00,
     "status": "sold_out",
     "image": "/images/kisspeptin-10mg.png",
     "category": "Peptides",
@@ -292,7 +304,7 @@ export const products: Product[] = [
   {
     "id": 32,
     "title": "PT-141 10mg",
-    "price": 110,
+    "price": 110.00,
     "status": "in_transit",
     "image": "/images/pt-141-10mg.png",
     "category": "Peptides",
@@ -304,7 +316,7 @@ export const products: Product[] = [
   {
     "id": 34,
     "title": "Insulin",
-    "price": 120,
+    "price": 74.99,
     "status": "in_transit",
     "image": "/images/insulin.png",
     "category": "Peptides",
@@ -312,5 +324,17 @@ export const products: Product[] = [
     "purity": "99%+ HPLC Verified",
     "form": "Lyophilized Powder",
     "researchArea": "Receptor Signaling & Glucose Transport Dynamics"
+  },
+  {
+    "id": 36,
+    "title": "Lemon Bottle Solution",
+    "price": 129.99,
+    "status": "in_stock",
+    "image": "/images/lemon-bottle.png",
+    "category": "Research Solutions",
+    "description": "Lemon Bottle Lipolytic Solution is a high-performance research formulation utilizing riboflavin (Vitamin B2), lecithin, and bromelain for targeted adipocyte metabolism and lipid cell degradation kinetics studies. Research Use Only (RUO). Not for human consumption.",
+    "purity": "99%+ HPLC Verified",
+    "form": "Liquid Solution (50ml)",
+    "researchArea": "Adipocyte Metabolism & Lipolytic Kinetics"
   }
 ];
