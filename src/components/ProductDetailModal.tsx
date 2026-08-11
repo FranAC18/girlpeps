@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Product } from '../types';
+import React, { useState, useEffect } from 'react';
+import { Product, ProductVariant } from '../types';
 import { X, ShoppingBag, MessageSquare, ShieldCheck, Clock, FlaskConical, ArrowLeft } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
@@ -14,6 +14,18 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   onClose,
   onAddToCart,
 }) => {
+  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | undefined>(undefined);
+
+  // Sync selectedVariant whenever modal opens for a product
+  useEffect(() => {
+    if (product) {
+      setSelectedVariant(
+        product.selectedVariant ||
+          (product.variants && product.variants.length > 0 ? product.variants[0] : undefined)
+      );
+    }
+  }, [product]);
+
   // Prevent body scrolling & add ESC key support when modal is open
   useEffect(() => {
     if (!product) return;
@@ -37,12 +49,28 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
   if (!product) return null;
 
-  const isAvailable = product.status === 'in_stock';
-  const isInTransit = product.status === 'in_transit';
+  const currentPrice = selectedVariant ? selectedVariant.price : product.price;
+  const currentStatus = selectedVariant ? selectedVariant.status : product.status;
+  const isAvailable = currentStatus === 'in_stock';
+  const isInTransit = currentStatus === 'in_transit';
+
+  const fullDisplayTitle = selectedVariant
+    ? `${product.title} ${selectedVariant.name}`
+    : product.title;
 
   const whatsappInquiryUrl = `https://wa.me/${siteConfig.whatsappRaw}?text=${encodeURIComponent(
-    `Hello ${siteConfig.brandName}, I would like to inquire about availability for: ${product.title} ($${product.price.toFixed(2)} USD)`
+    `Hello ${siteConfig.brandName}, I would like to inquire about availability for: ${fullDisplayTitle} ($${currentPrice.toFixed(2)} USD)`
   )}`;
+
+  const handleCartClick = () => {
+    onAddToCart({
+      ...product,
+      price: currentPrice,
+      status: currentStatus,
+      selectedVariant: selectedVariant,
+    });
+    onClose();
+  };
 
   return (
     <div 
@@ -120,9 +148,36 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 {product.title}
               </h2>
               <div className="mt-2 sm:mt-3 font-serif text-2xl sm:text-3xl font-bold text-[#3B302A]">
-                ${product.price.toFixed(2)} <span className="text-xs font-sans text-[#766960] font-normal">USD</span>
+                ${currentPrice.toFixed(2)} <span className="text-xs font-sans text-[#766960] font-normal">USD</span>
               </div>
             </div>
+
+            {/* Variant Option Selector */}
+            {product.variants && product.variants.length > 0 && (
+              <div className="space-y-2">
+                <span className="text-xs uppercase tracking-wider text-[#766960] font-semibold block">
+                  Select Concentration / Dosage:
+                </span>
+                <div className="flex flex-wrap items-center gap-2">
+                  {product.variants.map((v) => {
+                    const isSelected = selectedVariant?.id === v.id;
+                    return (
+                      <button
+                        key={v.id}
+                        onClick={() => setSelectedVariant(v)}
+                        className={`px-3.5 py-1.5 text-xs font-bold uppercase rounded-lg transition-all cursor-pointer border ${
+                          isSelected
+                            ? 'bg-[#3B302A] text-[#FFF9F0] border-[#3B302A] shadow-md ring-2 ring-[#C6A15B]/30'
+                            : 'bg-[#FBF3E4] text-[#766960] border-[#E9DCC8] hover:border-[#C6A15B] hover:text-[#3B302A]'
+                        }`}
+                      >
+                        {v.name} (${v.price.toFixed(2)})
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
             {/* Spec grid */}
             <div className="grid grid-cols-2 gap-3 text-xs bg-[#FBF3E4] p-3.5 sm:p-4 rounded-xl border border-[#E9DCC8]">
@@ -161,14 +216,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             <div className="space-y-2.5 pt-2">
               {isAvailable ? (
                 <button
-                  onClick={() => {
-                    onAddToCart(product);
-                    onClose();
-                  }}
+                  onClick={handleCartClick}
                   className="w-full py-3.5 sm:py-4 bg-[#3B302A] text-[#FFF9F0] font-semibold uppercase tracking-[0.15em] text-xs hover:bg-[#C6A15B] transition-all flex items-center justify-center gap-2 shadow-md rounded-full cursor-pointer"
                 >
                   <ShoppingBag className="w-4 h-4" />
-                  Add to Cart (${product.price.toFixed(2)} USD)
+                  Add to Cart (${currentPrice.toFixed(2)} USD)
                 </button>
               ) : (
                 <a
@@ -198,4 +250,5 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     </div>
   );
 };
+
 

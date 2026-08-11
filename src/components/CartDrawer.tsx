@@ -7,8 +7,8 @@ interface CartDrawerProps {
   isOpen: boolean;
   onClose: () => void;
   cartItems: CartItem[];
-  onUpdateQuantity: (productId: number, delta: number) => void;
-  onRemoveItem: (productId: number) => void;
+  onUpdateQuantity: (itemKey: string, delta: number) => void;
+  onRemoveItem: (itemKey: string) => void;
   onClearCart: () => void;
   appliedCoupon: CouponConfig | null;
   onApplyCoupon: (coupon: CouponConfig) => void;
@@ -63,6 +63,12 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     }
   };
 
+  const getItemKey = (item: CartItem) => {
+    return item.product.selectedVariant
+      ? `${item.product.id}-${item.product.selectedVariant.id}`
+      : `${item.product.id}`;
+  };
+
   const handleCheckoutWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -70,12 +76,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
     // Structured WhatsApp Order Message in English
     const productLines = cartItems
-      .map(
-        (item) =>
-          `• ${item.product.title} × ${item.quantity} — $${(
-            item.product.price * item.quantity
-          ).toFixed(2)} USD`
-      )
+      .map((item) => {
+        const titleWithVariant = item.product.selectedVariant
+          ? `${item.product.title} (${item.product.selectedVariant.name})`
+          : item.product.title;
+        return `• ${titleWithVariant} × ${item.quantity} — $${(
+          item.product.price * item.quantity
+        ).toFixed(2)} USD`;
+      })
       .join('\n');
 
     const couponBlock = appliedCoupon
@@ -154,57 +162,64 @@ _The customer will coordinate order verification and payment preferences directl
                 </button>
               </div>
             ) : (
-              cartItems.map((item) => (
-                <div
-                  key={item.product.id}
-                  className="flex items-center gap-3 p-3 bg-[#FBF3E4] rounded-2xl border border-[#E9DCC8]"
-                >
-                  <img
-                    src={item.product.image}
-                    alt={item.product.title}
-                    className="w-16 h-16 object-cover rounded-xl bg-[#FFF9F0] border border-[#E9DCC8]"
-                  />
-                  <div className="flex-1 min-w-0">
-                    <h4 className="text-sm font-semibold truncate text-[#3B302A] font-serif">
-                      {item.product.title}
-                    </h4>
-                    <p className="text-xs text-[#C6A15B] font-bold mt-0.5">
-                      ${item.product.price.toFixed(2)} USD
-                    </p>
-                    {/* Quantity Controls */}
-                    <div className="flex items-center gap-2 mt-2">
+              cartItems.map((item) => {
+                const itemKey = getItemKey(item);
+                const itemTitle = item.product.selectedVariant
+                  ? `${item.product.title} (${item.product.selectedVariant.name})`
+                  : item.product.title;
+
+                return (
+                  <div
+                    key={itemKey}
+                    className="flex items-center gap-3 p-3 bg-[#FBF3E4] rounded-2xl border border-[#E9DCC8]"
+                  >
+                    <img
+                      src={item.product.image}
+                      alt={itemTitle}
+                      className="w-16 h-16 object-cover rounded-xl bg-[#FFF9F0] border border-[#E9DCC8]"
+                    />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-sm font-semibold truncate text-[#3B302A] font-serif">
+                        {itemTitle}
+                      </h4>
+                      <p className="text-xs text-[#C6A15B] font-bold mt-0.5">
+                        ${item.product.price.toFixed(2)} USD
+                      </p>
+                      {/* Quantity Controls */}
+                      <div className="flex items-center gap-2 mt-2">
+                        <button
+                          onClick={() => onUpdateQuantity(itemKey, -1)}
+                          className="p-1 rounded bg-[#FFF9F0] hover:bg-[#E9DCC8] text-[#3B302A] transition-colors border border-[#E9DCC8]"
+                        >
+                          <Minus className="w-3 h-3" />
+                        </button>
+                        <span className="text-xs font-bold w-4 text-center">
+                          {item.quantity}
+                        </span>
+                        <button
+                          onClick={() => onUpdateQuantity(itemKey, 1)}
+                          className="p-1 rounded bg-[#FFF9F0] hover:bg-[#E9DCC8] text-[#3B302A] transition-colors border border-[#E9DCC8]"
+                        >
+                          <Plus className="w-3 h-3" />
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="text-right">
+                      <p className="text-sm font-bold text-[#3B302A]">
+                        ${(item.product.price * item.quantity).toFixed(2)}
+                      </p>
                       <button
-                        onClick={() => onUpdateQuantity(item.product.id, -1)}
-                        className="p-1 rounded bg-[#FFF9F0] hover:bg-[#E9DCC8] text-[#3B302A] transition-colors border border-[#E9DCC8]"
+                        onClick={() => onRemoveItem(itemKey)}
+                        className="p-1.5 text-[#766960] hover:text-red-600 mt-2 transition-colors cursor-pointer"
+                        title="Remove Item"
                       >
-                        <Minus className="w-3 h-3" />
-                      </button>
-                      <span className="text-xs font-bold w-4 text-center">
-                        {item.quantity}
-                      </span>
-                      <button
-                        onClick={() => onUpdateQuantity(item.product.id, 1)}
-                        className="p-1 rounded bg-[#FFF9F0] hover:bg-[#E9DCC8] text-[#3B302A] transition-colors border border-[#E9DCC8]"
-                      >
-                        <Plus className="w-3 h-3" />
+                        <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
-
-                  <div className="text-right">
-                    <p className="text-sm font-bold text-[#3B302A]">
-                      ${(item.product.price * item.quantity).toFixed(2)}
-                    </p>
-                    <button
-                      onClick={() => onRemoveItem(item.product.id)}
-                      className="p-1.5 text-[#766960] hover:text-red-600 mt-2 transition-colors cursor-pointer"
-                      title="Remove Item"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              ))
+                );
+              })
             )}
           </div>
 

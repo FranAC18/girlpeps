@@ -51,29 +51,39 @@ export function App() {
     }
   }, []);
 
-  const handleAddToCart = (product: Product) => {
-    if (product.status !== 'in_stock') return;
+  const getCartItemKey = (p: Product) => {
+    return p.selectedVariant ? `${p.id}-${p.selectedVariant.id}` : `${p.id}`;
+  };
+
+  const handleAddToCart = (productToAdd: Product) => {
+    if (productToAdd.status !== 'in_stock') return;
+
+    const itemKeyToAdd = getCartItemKey(productToAdd);
 
     setCartItems((prev) => {
-      const existing = prev.find((item) => item.product.id === product.id);
+      const existing = prev.find((item) => getCartItemKey(item.product) === itemKeyToAdd);
       if (existing) {
         return prev.map((item) =>
-          item.product.id === product.id
+          getCartItemKey(item.product) === itemKeyToAdd
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
-      return [...prev, { product, quantity: 1 }];
+      return [...prev, { product: productToAdd, quantity: 1 }];
     });
 
-    showToast(`Added ${product.title} to cart!`);
+    const displayTitle = productToAdd.selectedVariant
+      ? `${productToAdd.title} (${productToAdd.selectedVariant.name})`
+      : productToAdd.title;
+
+    showToast(`Added ${displayTitle} to cart!`);
   };
 
-  const handleUpdateQuantity = (productId: number, delta: number) => {
+  const handleUpdateQuantity = (targetKey: string, delta: number) => {
     setCartItems((prev) =>
       prev
         .map((item) => {
-          if (item.product.id === productId) {
+          if (getCartItemKey(item.product) === targetKey) {
             const newQty = item.quantity + delta;
             return newQty > 0 ? { ...item, quantity: newQty } : null;
           }
@@ -83,8 +93,8 @@ export function App() {
     );
   };
 
-  const handleRemoveItem = (productId: number) => {
-    setCartItems((prev) => prev.filter((item) => item.product.id !== productId));
+  const handleRemoveItem = (targetKey: string) => {
+    setCartItems((prev) => prev.filter((item) => getCartItemKey(item.product) !== targetKey));
   };
 
   const handleClearCart = () => {

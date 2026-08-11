@@ -1,5 +1,12 @@
 export type StockStatus = 'in_stock' | 'sold_out' | 'in_transit';
 
+export interface ProductVariant {
+  id: string;
+  name: string;
+  price: number;
+  status: StockStatus;
+}
+
 export interface Product {
   id: number;
   title: string;
@@ -11,11 +18,14 @@ export interface Product {
   purity?: string;
   form?: string;
   researchArea?: string;
+  variants?: ProductVariant[];
+  selectedVariant?: ProductVariant;
 }
 
 export interface CartItem {
   product: Product;
   quantity: number;
+  variant?: ProductVariant;
 }
 
 export interface OrderCustomerInfo {
@@ -27,3 +37,4 @@ export interface OrderCustomerInfo {
 }
 
 export type CategoryFilter = 'All' | 'Peptides' | 'Blends' | 'Research Solutions';
+
