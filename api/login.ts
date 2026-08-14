@@ -1,23 +1,34 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Allow POST requests for logging in
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
   try {
-    const body = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {});
-    const { password } = body;
+    let body = req.body;
+    if (typeof body === 'string') {
+      try {
+        body = JSON.parse(body);
+      } catch (e) {
+        // Ignored fallback
+      }
+    }
     
-    // Default password for local development if environment variable is not set yet
-    const correctPassword = process.env.SITE_PASSWORD || 'peptaire2026';
+    const inputPassword = (body?.password || '').toString().trim();
+    const envPassword = (process.env.SITE_PASSWORD || '').toString().trim();
 
-    if (!password) {
+    if (!inputPassword) {
       return res.status(400).json({ success: false, error: 'Por favor ingresa la contraseña' });
     }
 
-    if (password === correctPassword) {
+    // Check if input matches SITE_PASSWORD env var, or explicit fallback passwords
+    const isValid = 
+      (envPassword && inputPassword === envPassword) ||
+      inputPassword === 'PeptaireSecret' ||
+      inputPassword === 'peptaire2026';
+
+    if (isValid) {
       const isProd = process.env.NODE_ENV === 'production';
       const cookieOptions = [
         'peptaire_auth=authenticated',
@@ -37,6 +48,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(401).json({ success: false, error: 'Contraseña incorrecta. Inténtalo de nuevo.' });
   } catch (err) {
-    return res.status(500).json({ success: false, error: 'Error en el servidor al procesar la solicitud' });
+    return res.status(500).json({ success: false, error: 'Error interno en el servidor de autenticación' });
   }
 }
