@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, ShieldAlert, Instagram, Mail, Globe } from 'lucide-react';
+import { MessageSquare, ShieldAlert, Instagram, Mail, Globe, Lock } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 interface FooterProps {
@@ -124,7 +124,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrack, onOpenPolicy }) => 
       </div>
 
       <div className="container mx-auto px-6 mt-12 pt-6 border-t border-[#E9DCC8] text-center text-xs text-[#766960] font-light flex flex-col sm:flex-row items-center justify-between gap-4">
-        <span>© {new Date().getFullYear()} Girl Peps. All rights reserved.</span>
+        <div className="flex items-center gap-4">
+          <span>© {new Date().getFullYear()} Girl Peps. All rights reserved.</span>
+          <button
+            onClick={async () => {
+              await fetch('/api/logout');
+              window.location.reload();
+            }}
+            className="hover:text-[#3B302A] transition-colors flex items-center gap-1.5 cursor-pointer text-xs font-medium text-[#766960]"
+            title="Cerrar sesión de acceso privado"
+          >
+            <Lock className="w-3.5 h-3.5 text-[#C6A15B]" />
+            <span>Cerrar Sesión</span>
+          </button>
+        </div>
 
         {/* Mandated Attribution Link */}
         <div className="flex items-center gap-1.5 font-medium">
